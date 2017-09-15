@@ -34,6 +34,12 @@ class Word
      end
    end
 
+  #  def self.delete(delete_input)
+  #    @@creation_list = @@creation_list.reject do |item|
+  #      item.word_input == delete_input
+  #    end
+  #  end
+
   # def self.clear()
   #   @@full_contact = []
   # end

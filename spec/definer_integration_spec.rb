@@ -21,6 +21,16 @@ describe('the word path', {:type => :feature}) do
     visit('/definition/1')
     expect(page).to have_content('A mythical animal.')
   end
+
+  # it('deletes the a word') do
+  #   visit('/')
+  #   fill_in('wordInput', :with => 'Unicorn')
+  #   fill_in('definitionInput', :with => 'A mythical animal.')
+  #   click_button('Go!')
+  #   fill_in('deleteInput', :with => 'Unicorn')
+  #   visit('/definition/1')
+  #   expect(page).to have_no_content('Unicorn')
+  # end
 end
 
     # save_and_open_page
