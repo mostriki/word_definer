@@ -22,7 +22,7 @@ _Build a learning website for kids that will allow them to write up a list of wo
 
 4. _Open [http://localhost:4567/](http://localhost:4567/) in your favorite web browser._
 
-5. _You can also try the app [here](https://...)._
+5. _You can also try the app on [heroku](https://obscure-cliffs-15275.herokuapp.com/)._
 
 ## Support and contact details
 
