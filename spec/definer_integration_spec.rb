@@ -4,19 +4,19 @@ Capybara.app = Sinatra::Application
 set(:Show_exception, false)
 
 describe('the word path', {:type => :feature}) do
-  it('processes the word entry and returns a boolean') do
+  it('processes the word entry') do
     visit('/')
-    fill_in('wordInput', :with => 'Word')
-    fill_in('definitonInput', :with => 'Definition')
+    fill_in('wordInput', :with => 'Unicorn')
+    fill_in('definitionInput', :with => 'A mythical animal.')
     click_button('Go!')
-    expect(page).to have_content('Word')
+    expect(page).to have_content('Unicorn')
   end
 
-    it('processes the definition entry') do
-      visit('/')
-      fill_in('wordInput', :with => 'Word')
-      fill_in('definitonInput', :with => 'Definition')
-      click_button('Go!')
-      expect(page).to have_content('Definition')
-    end
+  it('processes the word entry') do
+    visit('/')
+    fill_in('wordInput', :with => 'Unicorn')
+    fill_in('definitionInput', :with => 'A mythical animal.')
+    click_button('Go!')
+    expect(page).to have_content('A mythical animal.')
+  end
 end

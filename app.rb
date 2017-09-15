@@ -13,7 +13,7 @@ post('/') do
   @word = params['wordInput']
   @definition = params['definitionInput']
 
-  class_info = Word.new({:word_input=> @word, :definition_input=> @definition})
+  class_info = Word.new({:word_input => @word, :definition_input => @definition})
   class_info.save
   @class_ins = Word.all()
   erb(:input)
