@@ -10,13 +10,17 @@ describe('the word path', {:type => :feature}) do
     fill_in('definitionInput', :with => 'A mythical animal.')
     click_button('Go!')
     expect(page).to have_content('Unicorn')
+
   end
 
-  # it('processes the word entry') do
-  #   visit('/')
-  #   fill_in('wordInput', :with => 'Unicorn')
-  #   fill_in('definitionInput', :with => 'A mythical animal.')
-  #   click_button('Go!')
-  #   expect(page).to have_content('A mythical animal.')
-  # end
+  it('processes the word entry') do
+    visit('/')
+    fill_in('wordInput', :with => 'Unicorn')
+    fill_in('definitionInput', :with => 'A mythical animal.')
+    click_button('Go!')
+    visit('/definition/1')
+    expect(page).to have_content('A mythical animal.')
+  end
 end
+
+    # save_and_open_page
