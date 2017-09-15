@@ -17,5 +17,6 @@
   <button type="submit" class="btn btn-info">Go!</button>
 </form>
 
-
-<h1><%= @word %> <%= @definition %></h1>
+<% @class_ins.each do |word| %>
+<h1><a href="/definition/<%= word.id %>"><%= word.word_input %></a></h1>
+<% end %>

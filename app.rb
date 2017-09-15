@@ -19,9 +19,9 @@ post('/') do
   erb(:input)
 end
 
-# get('/definition/') do
-#
-#
-#   @class_ins = Definer.all()
-#   erb(:definition_page)
-# end
+get('/definition/:id') do
+
+  @input_id = Word.find(params[:id])
+  @class_ins = Word.all()
+  erb(:definition_page)
+end
