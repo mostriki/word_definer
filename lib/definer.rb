@@ -2,7 +2,7 @@ class Definer
   @@creation_list = []
 
   # attr_reader :id
-  # attr_accessor :word :definition
+  attr_accessor(:word, :definition)
 
   def initialize(attribute)
     @word = attribute.fetch(:word)
