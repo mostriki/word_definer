@@ -11,4 +11,12 @@ describe('the word path', {:type => :feature}) do
     click_button('Go!')
     expect(page).to have_content('Word')
   end
+
+    it('processes the definition entry') do
+      visit('/')
+      fill_in('wordInput', :with => 'Word')
+      fill_in('definitonInput', :with => 'Definition')
+      click_button('Go!')
+      expect(page).to have_content('Definition')
+    end
 end
