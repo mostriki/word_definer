@@ -1,13 +1,12 @@
-<h2><%= @input_id.word_input %></h2>
+<h3><%= @input_id.word_input %>: <%= @input_id.definition_input %></h3>
+
 
 <form action="/definition/<%= @input_id.id %>" method="post">
   <div class="form-group">
-    <label for="definitionInput">Give it a unique definition: </label>
-    <input name="definitionInput" id="definitionInput"  class="form-control" type="text" placeholder="Write your definition here." required>
+    <label for="definitionInput"></label>
+    <input name="definitionInput" id="definitionInput"  class="form-control" type="text" placeholder="Give it a definition!" required>
   </div>
-  <button type="submit" class="btn btn-info">Go!</button>
+  <button type="submit" class="btn btn-warning">Go!</button>
 </form>
 
-<p><%= @input_id.definition_input %></p>
-
-<a href="/">Create another word!</a>
+<br><a href="/">Come up with another word!</a>

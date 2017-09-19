@@ -1,8 +1,31 @@
-/*form input[type='number']{
+h1{
+  font-family: 'Roboto', sans-serif;
+}
 
-}*/
+h2  {
+  font-size: 90px;
+}
 
-/*.container {
-  background-color: blue;
+h3{
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f9f7f4;
+}
+
+.jumbotron {
   text-align: center;
-}*/
+  background-image: url('../img/books_cover.jpg');
+  background-position: 25% 30%;
+  background-size: cover;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3vw;
+}
+
+.header {
+  padding-bottom: 25px;
+  background-color: #33a23d;
+}
