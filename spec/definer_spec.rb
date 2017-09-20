@@ -25,6 +25,18 @@ describe ('Word') do
     end
   end
 
+  describe ('.find') do
+    it("finds the word by id") do
+      Word.clear()
+      def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
+      def_class.save
+      def_class2 = Word.new({word_input: 'Monkeys', definition_input:'A real animal.'})
+      def_class2.save
+      expect(Word.find(1)).to(eq(def_class))
+      expect(Word.find(2)).to(eq(def_class2))
+    end
+  end
+
   describe ('#word') do
     it ('takes the input word and returns it.') do
       def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})

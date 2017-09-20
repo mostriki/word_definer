@@ -22,9 +22,9 @@ class Word
     @@creation_list.push(self)
   end
 
-  def self.sort
-    @@creation_list.sort_by! {|word_id| word_id.word_input}
-  end
+  # def self.sort
+  #   @@creation_list.sort_by! {|word_id| word_id.word_input}
+  # end
 
   def self.find(id)
     item_id = id.to_i()
