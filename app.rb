@@ -34,15 +34,7 @@ get('/definition/:id') do
 end
 
 post('/definition/:id') do
-  # @definition = params['definitionInput']
-  puts "hello"
-  puts params['definitionInput']
   @input_id = Word.find(params[:id])
   @input_id.definition_input = params['definitionInput']
-
-  # class_info = Word.new({:word_input => @word, :definition_input => @definition})
-  # class_info.save
-
-  # @class_ins = Word.all()
   erb(:definition_page)
 end

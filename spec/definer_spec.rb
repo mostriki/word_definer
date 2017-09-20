@@ -2,31 +2,40 @@ require ('rspec')
 require ('definer')
 require ('pry')
 
-# describe ('Definer') do
-#   describe ('.all') do
-#     it("is an empty array.") do
-#       expect(Word.all()).to(eq([]))
-#     end
-#   end
-#
-#   describe("#save") do
-#     it("lets you save doctors to the database") do
-#       doctor = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
-#       expect(Doctor.all).to(eq([doctor]))
-#     end
-#   end
-#
-#   describe ('#word') do
-#     it ('takes the input word and returns it.') do
-#       def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
-#       expect(def_class.word_input).to(eq("Unicorn"))
-#     end
-#   end
-#
-#   describe ('#definition') do
-#     it ('takes input definition and returns it.') do
-#       def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
-#       expect(def_class.definition_input).to(eq('A mythical animal.'))
-#     end
-#   end
-# end
+describe ('Word') do
+  describe(".clear") do
+    it("clears the array") do
+      def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
+  end
+
+  describe ('.all') do
+    it("is an empty array.") do
+      expect(Word.all).to(eq([]))
+    end
+  end
+
+  describe("#save") do
+    it("lets you save words to the database") do
+      def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
+      def_class.save
+      expect(Word.all).to(eq([def_class]))
+    end
+  end
+
+  describe ('#word') do
+    it ('takes the input word and returns it.') do
+      def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
+      expect(def_class.word_input).to(eq("Unicorn"))
+    end
+  end
+
+  describe ('#definition') do
+    it ('takes input definition and returns it.') do
+      def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
+      expect(def_class.definition_input).to(eq('A mythical animal.'))
+    end
+  end
+end
