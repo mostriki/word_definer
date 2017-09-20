@@ -6,19 +6,18 @@ set(:Show_exception, false)
 describe('the word path', {:type => :feature}) do
   it('processes the word entry') do
     visit('/')
-    fill_in('wordInput', :with => 'Unicorn')
-    fill_in('definitionInput', :with => 'A mythical animal.')
+    fill_in('wordInput', with: 'Unicorns')
     click_button('Go!')
-    expect(page).to have_content('Unicorn')
-
+    expect(page).to have_content('Unicorns')
   end
 
   it('processes the word entry') do
     visit('/')
-    fill_in('wordInput', :with => 'Unicorn')
-    fill_in('definitionInput', :with => 'A mythical animal.')
+    fill_in('wordInput', with: 'Unicorn')
     click_button('Go!')
-    visit('/definition/1')
+    click_link('Unicorn')
+    fill_in("definitionInput", with: 'A mythical animal.')
+    click_button('Go!')
     expect(page).to have_content('A mythical animal.')
   end
 
