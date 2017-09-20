@@ -22,6 +22,9 @@ class Word
     @@creation_list.push(self)
   end
 
+  def add_definition (definition)
+    @definition_input.push(definition)
+  end
   # def self.sort
   #   @@creation_list.sort_by! {|word_id| word_id.word_input}
   # end

@@ -2,7 +2,7 @@ require ('rspec')
 require ('definer')
 require ('pry')
 
-describe ('Word') do
+describe('Word') do
   describe(".clear") do
     it("clears the array") do
       def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
@@ -37,6 +37,13 @@ describe ('Word') do
     end
   end
 
+  # describe('#add_definition')
+  #   it('append multiple definitions to page')
+  #   def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
+  #
+  #   expect(def_class.word_input).to(eq())
+  # end
+
   describe ('#word') do
     it ('takes the input word and returns it.') do
       def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
@@ -48,6 +55,14 @@ describe ('Word') do
     it ('takes input definition and returns it.') do
       def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
       expect(def_class.definition_input).to(eq('A mythical animal.'))
+    end
+  end
+
+  describe ('#id') do
+    it ('takes input definition and returns it.') do
+      Word.clear
+      def_class = Word.new({word_input: 'Unicorn', definition_input: 'A mythical animal.'})
+      expect(def_class.id).to(eq(1))
     end
   end
 end
