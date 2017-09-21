@@ -18,15 +18,6 @@ post('/') do
   erb(:input)
 end
 
-# delete('/') do
-#   @delete_word = params["deleteInput"]
-#   class_info = Word.new({:word_input => @word, :definition_input => @definition})
-#   class_info.delete(delete_word)
-#   @class_ins = Word.sort()
-#   binding.pry
-#   erb(:input)
-# end
-
 get('/definition/:id') do
   @input_id = Word.find(params[:id])
   @class_ins = Word.all()
@@ -35,6 +26,6 @@ end
 
 post('/definition/:id') do
   @input_id = Word.find(params[:id])
-  @input_id.definition_input = params['definitionInput']
+  @input_id.add_definition(params['definitionInput'])
   erb(:definition_page)
 end

@@ -5,8 +5,8 @@ class Word
   attr_accessor(:word_input, :definition_input)
 
   def initialize(attribute)
-    @word_input = attribute.fetch(:word_input)
-    @definition_input = attribute.fetch(:definition_input)
+    @word_input = attribute[:word_input]
+    @definition_input = attribute[:definition_input]
     @id = @@creation_list.length + 1
   end
 
@@ -21,13 +21,16 @@ class Word
   def save
     @@creation_list.push(self)
   end
-
-  def add_definition (definition)
-    @definition_input.push(definition)
+# /////////
+  def add_definition(definition)
+    if @definition_input == nil
+      @definition_input = definition
+    elsif @definition_input.respond_to?(:push)
+      @definition_input.push(definition)
+    else
+      @definition_input = [@definition_input, definition]
+    end
   end
-  # def self.sort
-  #   @@creation_list.sort_by! {|word_id| word_id.word_input}
-  # end
 
   def self.find(id)
     item_id = id.to_i()
@@ -37,16 +40,4 @@ class Word
       end
     end
   end
-
-
-
-  #  def self.delete(delete_input)
-  #    @@creation_list = @@creation_list.reject do |item|
-  #      item.word_input == delete_input
-  #    end
-  #  end
-
-  # def self.clear()
-  #   @@full_contact = []
-  # end
 end

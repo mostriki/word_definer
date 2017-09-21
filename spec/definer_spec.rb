@@ -36,13 +36,17 @@ describe('Word') do
       expect(Word.find(2)).to(eq(def_class2))
     end
   end
-
-  # describe('#add_definition')
-  #   it('append multiple definitions to page')
-  #   def_class = Word.new({word_input: 'Unicorn', definition_input:'A mythical animal.'})
-  #
-  #   expect(def_class.word_input).to(eq())
-  # end
+# /////////
+  describe('#add_definition') do
+    it('appends multiple definitions to the page') do
+      Word.clear()
+      def_class = Word.new({word_input: 'Unicorn', definition_input:['A mythical animal.', 'A real animal.']})
+      def_class.save
+      expect(def_class.definition_input).to(eq(['A mythical animal.', 'A real animal.']))
+      def_class.add_definition('A mythical animal.')
+      expect(def_class.definition_input).to(eq(['A mythical animal.', 'A real animal.', 'A mythical animal.']))
+    end
+  end
 
   describe ('#word') do
     it ('takes the input word and returns it.') do
