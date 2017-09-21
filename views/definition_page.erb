@@ -1,12 +1,11 @@
-<% if @input_id.definition_input().respond_to?(:any?) %>
+<% if @input_id.definition_input().respond_to?(:join) %>
   <h3><%= @input_id.word_input %>: </h3>
 
   <ol>
-    <% @input_id.definition_input.each() do %>
-      <li><h3><<%= @input_id.definition_input.join('') %></h3></li>
+    <% @input_id.definition_input.each do |definition|%>
+      <h3><%= definition %></h3>
     <% end %>
   </ol>
-
 <% else %>
 
     <h3><%= @input_id.word_input %>: <%= @input_id.definition_input %></h3>
