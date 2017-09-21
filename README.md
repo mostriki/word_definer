@@ -10,7 +10,14 @@ _Build a learning website for kids that will allow them to write up a list of wo
 
 ## Specs
 
-
+| Description                               | Input                                                        | Output                                                 |
+|-------------------------------------------|--------------------------------------------------------------|--------------------------------------------------------|
+| Clears the array                          | 'Unicorn', 'A mythical animal.'                              | []                                                     |
+| Save words to the database                | 'Unicorn', 'A mythical animal.'                              | Unicorn, A mythical animal.                            |
+| Finds the word by id                      | Word.find(1)                                                 | Monkeys, A real animal.                                |
+| Appends multiple definitions to the page. | 'A mythical animal.', 'A real animal.', 'A mythical animal.' | A mythical animal. A real animal. & A mythical animal. |
+| Takes a word returns and it.              | 'Unicorn'                                                    | Unicorn                                                |
+| Takes a definition and returns it.        | 'A mythical animal.'                                         | A mythical animal.                                     |
 
 ## Setup/Installation Requirements
 
@@ -22,7 +29,7 @@ _Build a learning website for kids that will allow them to write up a list of wo
 
 4. _Open [http://localhost:4567/](http://localhost:4567/) in your favorite web browser._
 
-5. _You can also try the app on [heroku](https://obscure-cliffs-15275.herokuapp.com/)._
+5. _You can also try the app on [heroku](https://murmuring-basin-44508.herokuapp.com/)._
 
 ## Support and contact details
 
